@@ -6,7 +6,6 @@ import com.driver.model.Hotel;
 import com.driver.model.User;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
@@ -27,14 +26,14 @@ public class HotelManagementRepository {
     public String addHotel(Hotel hotel) {
         String hotelname=hotel.getHotelName();
         if(hotelname==null){
-            return "Failure";
+            return "FAILURE";
         }
         if(hotelDb.containsKey(hotelname)){
-            return "Failure";
+            return "FAILURE";
         }
         else{
             hotelDb.put(hotelname,hotel);
-            return "Hotel added Successfully";
+            return "SUCCESS";
         }
     }
 
